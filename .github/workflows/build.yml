@@ -16,8 +16,12 @@ jobs:
     - name: Unzip project files
       run: |
         if [ -f "AbyssAimbot.zip" ]; then
-          unzip AbyssAimbot.zip -d .
+          unzip AbyssAimbot.zip
+          mv AbyssAimbot/* .
         fi
+
+    - name: List files for debugging
+      run: ls -la
 
     - name: Set up JDK 17
       uses: actions/setup-java@v4
